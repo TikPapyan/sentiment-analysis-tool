@@ -20,9 +20,14 @@ $( document ).ready(function() {
 
         $.ajax(settings).done(function (response) {
             $('#new-content-data').append(`
-                <span>${response[0].classifications[0].tag_name}</span><span class="EmbedModel-module--green--aXVCp">${(response[0].classifications[0].confidence * 100).toFixed(1)}%</span></div>
+                <span>${response[0].classifications[0].tag_name}</span><span class="embed-model-module-green>${(response[0].classifications[0].confidence * 100).toFixed(1)}%</span></div>
             `)
         });
+    })
+    
+    $("#model_logout").click(function () {
+        localStorage.clear();
+        location.reload();
     })
 
     function checkProfile(){

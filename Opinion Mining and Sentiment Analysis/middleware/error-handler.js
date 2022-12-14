@@ -13,6 +13,5 @@ export default async (error, req, res, next) => {
 		message: errorMessage
 	};
 
-
 	res.status(code).json(data);
 };
